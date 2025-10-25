@@ -23,6 +23,14 @@ const Hero = ({ onBookAppointment }) => {
         </div>
         
         <div className="hero-image">
+          <div className="hero-main-image">
+            <img 
+              src="/book.png" 
+              alt="Healthcare Appointment Booking" 
+              className="hero-book-image"
+            />
+          </div>
+          
           <div className="floating-card animate-float">
             <i className="fas fa-user-md"></i>
             <h3>24/7 Available</h3>
