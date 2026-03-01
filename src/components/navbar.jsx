@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Navbar = ({ onLoginClick }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -29,21 +29,17 @@ const Navbar = ({ onLoginClick }) => {
             <i className="fas fa-heartbeat"></i>
             DocBook
           </a>
-          
+
           <div className={`nav-menu ${isMenuOpen ? 'show' : ''}`}>
             <a href="#home" className="nav-link" onClick={closeMenu}>Home</a>
             <a href="#services" className="nav-link" onClick={closeMenu}>Services</a>
             <a href="#doctors" className="nav-link" onClick={closeMenu}>Doctors</a>
             <a href="#about" className="nav-link" onClick={closeMenu}>About</a>
             <a href="#contact" className="nav-link" onClick={closeMenu}>Contact</a>
-            <button className="login-btn" onClick={() => { onLoginClick(); closeMenu(); }}>
-              <i className="fas fa-sign-in-alt"></i>
-              Login
-            </button>
           </div>
-          
-          <button 
-            className={`hamburger ${isMenuOpen ? 'active' : ''}`} 
+
+          <button
+            className={`hamburger ${isMenuOpen ? 'active' : ''}`}
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >

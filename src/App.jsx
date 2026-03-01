@@ -6,12 +6,10 @@ import Doctors from './components/Doctors';
 import About from './components/About';
 import Contact from './components/Contact';
 import BookingModal from './components/BookingModal';
-import Login from './components/Login';
 import Footer from './components/Footer';
 
 function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [selectedDoctor, setSelectedDoctor] = useState(null);
 
   const openBooking = (doctor = null) => {
@@ -19,17 +17,9 @@ function App() {
     setIsBookingOpen(true);
   };
 
-  const openLogin = () => {
-    setIsLoginOpen(true);
-  };
-
-  const closeLogin = () => {
-    setIsLoginOpen(false);
-  };
-
   return (
     <>
-      <Navbar onLoginClick={openLogin} />
+      <Navbar />
       <Hero onBookAppointment={() => openBooking()} />
       <Services />
       <Doctors onBookAppointment={openBooking} />
@@ -40,10 +30,6 @@ function App() {
         isOpen={isBookingOpen}
         onClose={() => setIsBookingOpen(false)}
         selectedDoctor={selectedDoctor}
-      />
-      <Login
-        isOpen={isLoginOpen}
-        onClose={closeLogin}
       />
     </>
   );
